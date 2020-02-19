@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Gamboard from "./components/Gameboard";
 import Score from "./components/Score";
+import dicks from "./dicks.json";
 import './App.css';
 
 class App extends Component {
