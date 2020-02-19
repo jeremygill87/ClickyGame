@@ -1,14 +1,15 @@
 import React from 'react';
 import Gameboard from "./components/Gameboard";
-import Score from "./components/Score";
 import Wrapper from "./components/Wrapper";
+import Navbar from "./components/Navbar";
+import Title from "./components/Title";
 import dicks from "./dicks.json";
 import './App.css';
 
 class App extends React.Component {
   state = {
     message: "Click a Dick to start",
-    hightscore: 0,
+    highScore: 0,
     currentScore: 0,
     dicks: dicks,
     unselectedDicks: dicks
@@ -47,28 +48,28 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Click-A-Dick</h1>
-          <p className="App-Intro">
-            Don't click a dick more than once.  The journey is long and hard, but I know you can finish
-          </p>
-        </header>
-        <Score total={this.state.score}
-                    goal={20}
-                    status={this.state.status}
-                    />
-          <Wrapper>
-            {this.state.dicks.map(dick => (
-              <Gameboard
-                shuffleCards={this.shuffleCards}
-                id={dick.id}
-                key={dick.id}
-                image={dick.image}/>
-            ))}
-          </Wrapper>
-      </div>
-    )
+      <Wrapper>
+        <Navbar
+        message = {this.state.message}
+        currentScore = {this.state.currentScore}
+        highScore = {this.state.highScore}
+        />
+        <Title/>
+        <div className="containerDiv">
+          {this.state.dicks.map(dick => (
+            <Gameboard
+            name={dick.name}
+            id={dick.id}
+            key={dick.id}
+            image={dick.image}
+            selectDick={this.selectDick}
+            currentScore={this.state.currentScore}
+            highScore={this.state.highScore}
+            />
+          ))}
+        </div>
+      </Wrapper>
+    );
   }
 }
 

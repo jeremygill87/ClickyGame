@@ -1,0 +1,21 @@
+.score {
+    color: #78dddd;
+}
+
+.highScore {
+    color: #e71482
+}
+
+.navbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background-color: #000;
+    min-height: 70px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    width: 100%;
+    border-bottom: 1px solid black;
+}

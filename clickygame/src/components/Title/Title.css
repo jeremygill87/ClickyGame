@@ -1,0 +1,18 @@
+.jumbotron {
+    margin-top: 70px;
+    margin-bottom: 0px;
+    text-align: center;
+    width: 100%;
+    color: white;
+    text-shadow: 0 0 5px #000;
+    letter-spacing: 1px;
+    height: 100px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+h1 {
+    font-size: 3.5 rem;
+    margin-bottom: 0px;
+}
+
