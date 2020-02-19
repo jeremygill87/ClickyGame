@@ -1,42 +1,48 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Gameboard from "./components/Gameboard";
 import Score from "./components/Score";
 import Wrapper from "./components/Wrapper";
 import dicks from "./dicks.json";
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
   state = {
-    dicks,
-    clickedDicks: [],
-    score: 0,
-    goal: 20,
-    status: ""
+    message: "Click a Dick to start",
+    hightscore: 0,
+    currentScore: 0,
+    dicks: dicks,
+    unselectedDicks: dicks
   };
 
-  // shuffle the cards
-  shuffleCards = id => {
-    let clickedDicks = this.state.clickedDicks;
+  shuffleCards = array => {
+    for (let i = array.length -1; i > 0; i--) {
+      let random = Math.floor(Math.random() * ( i + 1));
+      [array[i], array[random]] = [array[random], array[i]];
+    };
+  };
 
-    if(clickedDicks.includes(id)){
-      this.setState({ clickedDicks: [], score: 0, status: "You lost.  What a dick." });
-      return;
+  selectDick = name => {
+    const findDick = this.state.unselectedDicks.find(item => item.name === name);
+
+    if (findDick === undefined) {
+      this.setState({
+        message: "Wrong!  You need to bone up on your dick recognition",
+        highScore: (this.state.currentScore > this.state.highScore) ? this.state.currentScore: this.state.highScore,
+        currentScore: 0,
+        dicks: dicks,
+        unselectedDicks: dicks
+      });
     } else {
-      clickedDicks.push(id)
+      const newDick = this.state.unselectedDicks.filter(item => item.name !== name);
 
-      if(clickedDicks.length === 20) {
-        this.setState({ score: 20, status: "You sure know your dicks!", clickedDicks: []});
-        console.log("A winner is you!");
-        return;
-      }
-
-      this.setState({ dicks, clickedDicks, score: clickedDicks.length, status: " " });
-
-      for (let i = dicks.length -1; i > 0; i--) {
-        let random = Math.floor(Math.random() * (i + 1));
-        [dicks[i], dicks[random]] = [dicks[random], dicks[i]];
-      }
+      this.setState({
+        message: "Ugh, what a dick",
+        currentScore: this.state.currentScore + 1,
+        dicks: dicks,
+        unselectedDicks: newDick
+      });
     }
+    this.shuffleCards(dicks);
   }
 
   render() {
