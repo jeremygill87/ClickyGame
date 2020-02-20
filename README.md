@@ -1,68 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ClickyGame
+Overview
+Click-A-Dick is a web-game application in which users seek the tiniest morsel of joy in the barren hellscape that is politics and society of 2020 by clicking on the images of people who are, objectively, dicks.
+Points are earned by clicking a dick that hasn’t previously been clicked.
+After every click, the dicks shift to the left, right, or wherever. Make sure you don’t click the same dick. Memory!
+You win if you reach 20. But, really, let’s be honest. In this cruel existence, are any of us winners?
+Technology Used
+React.js
+Bootstrap
+The Code
+Beginning
+First step was initializing all of the React files. Then making the .gitignore, because I won’t be making that mistake again.
 
-## Available Scripts
+Coding
+Many of the files remain untouched, such as index.html, serviceWorker.js, and the package.json files.
 
-In the project directory, you can run:
+The logic behind the game is relatively straightforward, but navigating the new React syntax and connectivity proved to be a pain in the dick. All too often, my progress was impeded by switching back and forth between tabs, forgetting the names of variables, and working in an inefficient circular pattern.
 
-### `npm start`
+Then, I realized I could do almost everything in App.js and not worry about any of the components. After that - smooth sailing.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Components
+Gameboard
+All of the images appear here. On each click, they shuffle to a new location.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Navbar
+Wasn’t sure what to call this, but it looks like a navigation bar and I stole the basic framework off of Bootstrap, so here we are. The Navbar gives you messages about your progress and keeps track of the user’s current and high scores.
 
-### `npm test`
+Title
+Self-explanatory, really.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Wrapper
+Sort of like a big ole hug from your computer. Keeps all the dicks contained.
 
-### `npm run build`
+The Future
+There are new dicks born everyday. Previous heroes (Kanye West and Ricky Gervais) become unrepentant dicks and new dicks emerge into the cultural zeitgeist. Indeed, the possibilities for this game are as endless as the supply of fresh dicks every year.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Godspeed…and Happy Dick Clicking
